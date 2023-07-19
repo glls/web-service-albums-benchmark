@@ -77,6 +77,8 @@ func main() {
 		log.Fatal(err)
 	}
 
+	gin.SetMode(gin.ReleaseMode)
+
 	router := gin.Default()
 	router.GET("/albums", getAlbums)
 	router.GET("/albums/:id", getAlbumByID)
