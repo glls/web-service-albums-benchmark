@@ -8,5 +8,5 @@ pip install -r requirements.txt
 
 Run with gunicorn without logging
 ```
-gunicorn  app:app --log-level critical
+gunicorn app:app --workers=24 --log-level critical
 ```
