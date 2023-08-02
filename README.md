@@ -1,12 +1,15 @@
+# Project scope
 
+Serve a list of 100 albums with a REST like interface (JSON) and measure the performance with [wrk](https://github.com/wg/wrk)
 
-```
-Running 10s test @ http://localhost:8080/albums/
-  2 threads and 10 connections
-  Thread Stats   Avg      Stdev     Max   +/- Stdev
-    Latency    91.70us   75.30us   3.62ms   92.57%
-    Req/Sec    55.45k     1.09k   57.54k    74.75%
-  1114934 requests in 10.10s, 204.15MB read
-Requests/sec: 110394.00
-Transfer/sec:     20.21MB
-```
+## Requirements
+
+* server should run on port 8000
+* output should be RAW JSON
+* albums should be pre-loaded
+* benchmark in same machine with minimum apps loaded
+  * `wrk -d 20 -t 1 -c 1 http://127.0.0.1:8000/albums`
+  * `wrk -d 20 http://127.0.0.1:8000/albums` (2 threads and 10 connections - default)
+  * `wrk -d 20 -t 16 -c 500 http://127.0.0.1:8000/albums`
+
+Extra information can be found in each mini project folder.
