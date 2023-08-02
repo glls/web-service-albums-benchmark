@@ -9,3 +9,5 @@ nvm install --lts
 npm i
 node app.js
 ```
+
+tests ran on node v18.17.0
