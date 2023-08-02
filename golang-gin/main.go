@@ -36,7 +36,8 @@ func readAlbums(filename string) ([]album, error) {
 
 // getAlbums responds with the list of all albums as JSON.
 func getAlbums(c *gin.Context) {
-	c.IndentedJSON(http.StatusOK, albums)
+	// c.IndentedJSON(http.StatusOK, albums)
+	c.JSON(http.StatusOK, albums)
 }
 
 // getAlbumByID locates the album whose ID value matches the id
@@ -78,8 +79,10 @@ func main() {
 	}
 
 	gin.SetMode(gin.ReleaseMode)
-
-	router := gin.Default()
+	//create a new router because we dont need the logger middleware
+	// router := gin.Default()
+	router := gin.New()
+	router.Use(gin.Recovery())
 	router.GET("/albums", getAlbums)
 	router.GET("/albums/:id", getAlbumByID)
 	router.POST("/albums", postAlbums)
