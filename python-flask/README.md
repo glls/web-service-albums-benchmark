@@ -6,7 +6,7 @@ python3 -m venv venv
 pip install -r requirements.txt
 ```
 
-Run with uvicorn without logging
+Run with gunicorn without logging
 ```
-uvicorn  app:app --log-level critical
+gunicorn  app:app --log-level critical
 ```
