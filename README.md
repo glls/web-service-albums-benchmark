@@ -22,3 +22,4 @@ Serve a list of 100 albums with a REST like interface (JSON) and measure the per
 * Ubuntu 22.04.2 LTS
 
 Extra information can be found in each mini project folder.
+![Chart](chart.svg)
