@@ -1,4 +1,4 @@
- $  wrk -d 20 -t 1 -c 1 http://127.0.0.1:8000/albums   
+$  wrk -d 20 -t 1 -c 1 http://127.0.0.1:8000/albums   
 Running 20s test @ http://127.0.0.1:8000/albums
   1 threads and 1 connections
   Thread Stats   Avg      Stdev     Max   +/- Stdev
@@ -7,7 +7,6 @@ Running 20s test @ http://127.0.0.1:8000/albums
   180405 requests in 20.00s, 21.68MB read
 Requests/sec:   9020.16
 Transfer/sec:      1.08MB
- gl@gl-b660  ~  wrk -d 20 -t 16 -c 500 http://127.0.0.1:8000/albums
 
 $ wrk -d 20 http://127.0.0.1:8000/albums             
 Running 20s test @ http://127.0.0.1:8000/albums
