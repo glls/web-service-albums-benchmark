@@ -1,0 +1,29 @@
+$ wrk -d 20 -t 1 -c 1 http://127.0.0.1:8000/albums 
+Running 20s test @ http://127.0.0.1:8000/albums
+  1 threads and 1 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   435.77us   49.78us   3.41ms   98.76%
+    Req/Sec     2.26k    21.69     2.29k    89.05%
+  45234 requests in 20.10s, 332.17MB read
+Requests/sec:   2250.49
+Transfer/sec:     16.53MB
+
+$ wrk -d 20 http://127.0.0.1:8000/albums             
+Running 20s test @ http://127.0.0.1:8000/albums
+  2 threads and 10 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     4.46ms  109.45us   7.58ms   94.97%
+    Req/Sec     1.12k    15.28     1.16k    68.50%
+  44758 requests in 20.00s, 328.67MB read
+Requests/sec:   2237.38
+Transfer/sec:     16.43MB
+
+$ wrk -d 20 -t 16 -c 500 http://127.0.0.1:8000/albums
+Running 20s test @ http://127.0.0.1:8000/albums
+  16 threads and 500 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   224.00ms   13.35ms 234.15ms   98.83%
+    Req/Sec   136.97     72.64   313.00     63.02%
+  44202 requests in 20.09s, 324.59MB read
+Requests/sec:   2200.18
+Transfer/sec:     16.16MB
