@@ -1,3 +1,5 @@
+# default run (without --workers)
+
 $ wrk -d 20 -t 1 -c 1 http://127.0.0.1:8000/albums 
 Running 20s test @ http://127.0.0.1:8000/albums
   1 threads and 1 connections
@@ -27,3 +29,35 @@ Running 20s test @ http://127.0.0.1:8000/albums
   44202 requests in 20.09s, 324.59MB read
 Requests/sec:   2200.18
 Transfer/sec:     16.16MB
+
+# with gunicorn --workers=24
+
+$ wrk -d 20 -t 1 -c 1 http://127.0.0.1:8000/albums 
+Running 20s test @ http://127.0.0.1:8000/albums
+  1 threads and 1 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     2.46ms    0.91ms   6.48ms   69.24%
+    Req/Sec   386.42     66.85   680.00     70.00%
+  7700 requests in 20.02s, 56.54MB read
+Requests/sec:    384.71
+Transfer/sec:      2.83MB
+
+$ wrk -d 20 http://127.0.0.1:8000/albums           
+Running 20s test @ http://127.0.0.1:8000/albums
+  2 threads and 10 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   742.44us  222.12us   4.10ms   79.28%
+    Req/Sec     6.31k   291.23     6.61k    92.04%
+  252307 requests in 20.10s, 1.81GB read
+Requests/sec:  12552.60
+Transfer/sec:     92.18MB
+
+$ wrk -d 20 -t 16 -c 500 http://127.0.0.1:8000/albums
+Running 20s test @ http://127.0.0.1:8000/albums
+  16 threads and 500 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    23.94ms    5.14ms 110.94ms   87.28%
+    Req/Sec     1.23k   205.98     1.57k    72.14%
+  393390 requests in 20.10s, 2.82GB read
+Requests/sec:  19573.07
+Transfer/sec:    143.73MB
