@@ -1,9 +1,0 @@
-Running 10s test @ http://localhost:8000/albums
-  2 threads and 10 connections
-  Thread Stats   Avg      Stdev     Max   +/- Stdev
-    Latency   227.63us   67.00us   1.06ms   78.50%
-    Req/Sec    11.93k   167.00    12.37k    67.33%
-  239731 requests in 10.10s, 1.71GB read
-  Socket errors: connect 0, read 239731, write 0, timeout 0
-Requests/sec:  23736.86
-Transfer/sec:    173.81MB
