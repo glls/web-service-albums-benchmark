@@ -34,7 +34,7 @@ func readAlbums(filename string) ([]album, error) {
 	return albums, nil
 }
 
-// getAlbums responds with the list of all albums as JSON.
+// getAlbums responds with the list of all albums as JSON
 func getAlbums(c *gin.Context) {
 	// c.IndentedJSON(http.StatusOK, albums)
 	c.JSON(http.StatusOK, albums)
@@ -85,6 +85,6 @@ func main() {
 	router.Use(gin.Recovery())
 	router.GET("/albums", getAlbums)
 	router.GET("/albums/:id", getAlbumByID)
-	router.POST("/albums", postAlbums)
+	// router.POST("/albums", postAlbums)
 	router.Run("0.0.0.0:8000")
 }

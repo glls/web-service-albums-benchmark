@@ -1,0 +1,25 @@
+Running golang-gin test
+Running 20s test @ http://127.0.0.1:8000/albums
+  1 threads and 1 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    37.27us   41.20us   4.21ms   97.43%
+    Req/Sec    28.13k   416.84    28.96k    88.56%
+  562619 requests in 20.10s, 4.04GB read
+Requests/sec:  27991.16
+Transfer/sec:    205.97MB
+Running 20s test @ http://127.0.0.1:8000/albums
+  2 threads and 10 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    95.32us  211.40us  10.87ms   97.82%
+    Req/Sec    61.66k     1.28k   65.16k    72.14%
+  2466292 requests in 20.10s, 17.72GB read
+Requests/sec: 122703.25
+Transfer/sec:      0.88GB
+Running 20s test @ http://127.0.0.1:8000/albums
+  16 threads and 500 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    23.23ms   43.23ms 619.88ms   88.52%
+    Req/Sec     9.11k     3.57k   43.88k    68.71%
+  2906591 requests in 20.07s, 20.89GB read
+Requests/sec: 144825.41
+Transfer/sec:      1.04GB
