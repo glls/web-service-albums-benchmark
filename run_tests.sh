@@ -4,7 +4,7 @@ dir=$(basename $PWD)
 host=$(hostnamectl hostname)
 filename="results_${dir}_${host}.txt"
 
-echo Running $dir test | tee -a $filename
+echo Running $dir test > $filename
 
 wrk -d 20 -t 1 -c 1 http://127.0.0.1:8000/albums | tee -a $filename
 
