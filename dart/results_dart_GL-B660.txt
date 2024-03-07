@@ -1,0 +1,25 @@
+Running dart test
+Running 20s test @ http://127.0.0.1:8000/albums
+  1 threads and 1 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    30.16us   11.55us   0.94ms   97.12%
+    Req/Sec    33.60k     3.41k   35.37k    96.02%
+  671637 requests in 20.10s, 4.85GB read
+Requests/sec:  33415.11
+Transfer/sec:    247.10MB
+Running 20s test @ http://127.0.0.1:8000/albums
+  2 threads and 10 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   205.23us    8.04us 710.00us   88.00%
+    Req/Sec    24.44k   299.93    25.06k    82.34%
+  977527 requests in 20.10s, 7.06GB read
+Requests/sec:  48633.68
+Transfer/sec:    359.64MB
+Running 20s test @ http://127.0.0.1:8000/albums
+  16 threads and 500 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    11.77ms   12.88ms 482.59ms   99.47%
+    Req/Sec     2.78k   478.10     9.38k    95.03%
+  875751 requests in 20.07s, 6.32GB read
+Requests/sec:  43628.93
+Transfer/sec:    322.63MB
