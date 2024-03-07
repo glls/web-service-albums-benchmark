@@ -20,6 +20,7 @@ class Album {
 }
 
 List<Album> albums = [];
+String albumsJson = '';
 
 void main() async {
   // Read the albums data from the file at the beginning
@@ -31,6 +32,7 @@ void main() async {
       .map((json) => Album(
           json['ID'], json['Title'], json['Artist'], json['Price'].toDouble()))
       .toList();
+  albumsJson = jsonEncode(albums.map((album) => album.toJson()).toList());
 
   // Start the HTTP server
   final server = await HttpServer.bind(InternetAddress.loopbackIPv4, 8000);
@@ -63,10 +65,9 @@ void handleRequest(HttpRequest request) {
 }
 
 void handleGetAlbums(HttpRequest request) {
-  final albumsJson = albums.map((album) => album.toJson()).toList();
   request.response
     ..headers.contentType = ContentType.json
-    ..write(jsonEncode(albumsJson))
+    ..write(albumsJson)
     ..close();
 }
 
