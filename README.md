@@ -5,6 +5,7 @@ Serve a list of 100 albums with a REST like interface (JSON) and measure the per
 ## Requirements
 
 * server should run on port 8000
+* server app should be optimized for speed (release mode) when possible
 * output should be RAW JSON prepared in advance
 * albums should be pre-loaded, no database or file access
 * benchmark all apps on the same machine with minimum apps loaded
