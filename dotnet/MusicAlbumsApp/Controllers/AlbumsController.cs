@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 
@@ -19,6 +15,7 @@ namespace YourAppName.Controllers
             var albumsData = System.IO.File.ReadAllText("../../albums.json");
             _albums = JsonConvert.DeserializeObject<List<Album>>(albumsData);
         }
+
 
         [HttpGet]
         public IEnumerable<Album> GetAlbums([FromQuery] int skip = 0, [FromQuery] int limit = 100)

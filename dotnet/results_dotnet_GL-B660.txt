@@ -1,0 +1,25 @@
+Running dotnet test
+Running 20s test @ http://127.0.0.1:8000/albums
+  1 threads and 1 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   414.96us    4.32ms 107.34ms   99.51%
+    Req/Sec     8.45k     2.89k   11.17k    87.50%
+  168238 requests in 20.10s, 1.21GB read
+Requests/sec:   8370.16
+Transfer/sec:     61.57MB
+Running 20s test @ http://127.0.0.1:8000/albums
+  2 threads and 10 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   150.72us  430.85us  21.58ms   99.55%
+    Req/Sec    37.69k     1.10k   39.68k    85.00%
+  1500185 requests in 20.00s, 10.78GB read
+Requests/sec:  75000.64
+Transfer/sec:    551.68MB
+Running 20s test @ http://127.0.0.1:8000/albums
+  16 threads and 500 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     4.41ms    2.08ms  62.96ms   84.71%
+    Req/Sec     7.10k   765.76    22.64k    90.07%
+  2270069 requests in 20.10s, 16.31GB read
+Requests/sec: 112946.34
+Transfer/sec:    830.80MB
