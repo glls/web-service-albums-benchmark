@@ -33,7 +33,7 @@ Machine #2 (Server VM)
 * UNRAID SSD 20GB
 * Ubuntu 22.04.4 LTS Server
 
-
-
 Extra information can be found in each mini project's folder.
 ![Chart](chart.svg)
+
+You can also check my article [The correct way to benchmark your web server](https://georgelitos.com/post/benchmark-webserver/)
