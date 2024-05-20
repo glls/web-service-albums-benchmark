@@ -1,4 +1,6 @@
-# Project scope
+# Benchmarking API Frameworks
+
+## Project scope
 
 Serve a list of 100 albums with a REST like interface (JSON) and measure the performance with [wrk](https://github.com/wg/wrk)
 
